@@ -1,0 +1,58 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   LudumDare34/Library/AssetServerCacheV3
+#	modified:   LudumDare34/Library/CurrentLayout.dwlt
+#	modified:   LudumDare34/Library/ProjectSettings.asset
+#	modified:   LudumDare34/Library/ScriptAssemblies/Assembly-CSharp.dll
+#	modified:   LudumDare34/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb
+#	modified:   LudumDare34/Library/ScriptAssemblies/BuiltinAssemblies.stamp
+#	modified:   LudumDare34/Library/ScriptMapper
+#	modified:   LudumDare34/Library/assetDatabase3
+#	modified:   LudumDare34/Library/expandedItems
+#	modified:   LudumDare34/Library/metadata/00/00000000000000001000000000000000
+#	modified:   LudumDare34/Library/metadata/00/00000000000000002000000000000000
+#	modified:   LudumDare34/Library/metadata/00/00000000000000003000000000000000
+#	modified:   LudumDare34/Library/metadata/00/00000000000000004000000000000000
+#	modified:   LudumDare34/Library/metadata/00/00000000000000004100000000000000
+#	modified:   LudumDare34/Library/metadata/00/00000000000000005000000000000000
+#	modified:   LudumDare34/Library/metadata/00/00000000000000005100000000000000
+#	modified:   LudumDare34/Library/metadata/00/00000000000000006000000000000000
+#	modified:   LudumDare34/Library/metadata/00/00000000000000006100000000000000
+#	modified:   LudumDare34/Library/metadata/00/00000000000000007000000000000000
+#	modified:   LudumDare34/Library/metadata/00/00000000000000008000000000000000
+#	modified:   LudumDare34/Library/metadata/00/00000000000000008100000000000000
+#	modified:   LudumDare34/Library/metadata/00/00000000000000009000000000000000
+#	new file:   LudumDare34/Library/metadata/00/00000000000000009100000000000000
+#	new file:   LudumDare34/Library/metadata/00/00000000000000009100000000000000.info
+#	modified:   LudumDare34/Library/metadata/00/0000000000000000a000000000000000
+#	modified:   LudumDare34/Library/metadata/00/0000000000000000b000000000000000
+#	modified:   LudumDare34/Library/metadata/00/0000000000000000c000000000000000
+#	modified:   LudumDare34/Library/metadata/0b/0b4ac43bef8a06347bf2c9e02a34ea26
+#	modified:   LudumDare34/Library/metadata/36/36746c6e1250a8a40a8a10e5b4edf7ce
+#	modified:   LudumDare34/Library/metadata/54/54f0e091bdd25c745853d46daefa2f04
+#	modified:   LudumDare34/Library/metadata/54/54f0e091bdd25c745853d46daefa2f04.info
+#	modified:   LudumDare34/Library/metadata/54/54f8d97cabbee7044b7e938086a1970d
+#	modified:   LudumDare34/Library/metadata/5f/5f32cd94baa94578a686d4b9d6b660f7
+#	modified:   LudumDare34/Library/metadata/5f/5f32cd94baa94578a686d4b9d6b660f7.info
+#	modified:   LudumDare34/Library/metadata/73/739bbd9f364b4268874f9fd86ab3beef
+#	modified:   LudumDare34/Library/metadata/80/80a3616ca19596e4da0f10f14d241e9f
+#	modified:   LudumDare34/Library/metadata/85/852e56802eb941638acbb491814497b0
+#	modified:   LudumDare34/Library/metadata/87/870353891bb340e2b2a9c8707e7419ba
+#	modified:   LudumDare34/Library/metadata/87/870353891bb340e2b2a9c8707e7419ba.info
+#	modified:   LudumDare34/Library/metadata/97/97decbdab0634cdd991f8d23ddf0dead
+#	modified:   LudumDare34/Library/metadata/c7/c72474816e00b6b49806964d6048b5de
+#	modified:   LudumDare34/Library/metadata/f3/f30da804a307d5e42b2149373a265843
+#	modified:   LudumDare34/Library/metadata/f5/f5f67c52d1564df4a8936ccd202a3bd8
+#	modified:   LudumDare34/ProjectSettings/ProjectSettings.asset
+#	modified:   LudumDare34/ProjectSettings/ProjectVersion.txt
+#	new file:   LudumDare34/ProjectSettings/UnityAnalyticsManager.asset
+#
+# Untracked files:
+#	LudumDare34/Temp/
+#
+
