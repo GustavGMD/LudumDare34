@@ -14,19 +14,19 @@ public class SoundProcessor : MonoBehaviour {
     public float[] deltaBand;           //the variation for each band from one fram to another
     public float[] deltaDeltaBand;      //the variation of the variation from one fram to another
 
-    public List<float> deltaPerUdate;
-    public List<float> deltaDeltaPerUdate;
+    //public List<float> deltaPerUdate;
+    //public List<float> deltaDeltaPerUdate;
 
     public float currentDeltaSum = 0;       //soma de todos os deltas(variações) positivos
-    public float ritmoThreshold = 20;       //quando a soma dos deltas chegar neste valor, cria um novo ritmo  
-    public float deltaThreshold = 1;        //quando a soma da variação dos deltas passar deste valor, adiciona o valor do delta atual na soma dos deltas
+    public float ritmoThreshold = 300;       //quando a soma dos deltas chegar neste valor, cria um novo ritmo  
+    public float deltaThreshold = 0.3f;        //quando a soma da variação dos deltas passar deste valor, adiciona o valor do delta atual na soma dos deltas
 
     private AppleScript appleScript;
 
 	// Use this for initialization
 	void Start () {
-        deltaPerUdate = new List<float>();
-        deltaDeltaPerUdate = new List<float>();
+        //deltaPerUdate = new List<float>();
+        //deltaDeltaPerUdate = new List<float>();
         appleScript = GetComponent<AppleScript>();
         deltaBand = new float[appleScript.band.Length];
         deltaDeltaBand = new float[appleScript.band.Length];
@@ -53,8 +53,8 @@ public class SoundProcessor : MonoBehaviour {
             __deltaDeltaSum += deltaDeltaBand[i];
         }
 
-        deltaPerUdate.Add(__deltaSum);
-        deltaDeltaPerUdate.Add(__deltaDeltaSum);
+        //deltaPerUdate.Add(__deltaSum);
+        //deltaDeltaPerUdate.Add(__deltaDeltaSum);
 
         if(currentDeltaSum >= ritmoThreshold)
         {            
