@@ -28,7 +28,6 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-<<<<<<< HEAD
 		InvokeRepeating("GameObjectSpawn", 0.0f, 2.0f); // update at 15 fps
 		countPerfeito = 0;
 		countBom = 0;
@@ -44,9 +43,6 @@ public class GameManager : MonoBehaviour {
 		int res = UnityEngine.Random.Range (0, 2);
 		GameObject obj =(GameObject) Instantiate (ritmoModel, spawnPosition[res], Quaternion.identity);
 		filaRitmos [res].Enqueue (obj);
-=======
-        
->>>>>>> origin/master
 	}
 	
 	// Update is called once per frame
