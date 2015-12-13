@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -37,6 +38,8 @@ public class GameManager : MonoBehaviour {
 
 	public int countErros;
 
+    public int comboMax = 0;
+
     public int energia = 50;
 
 	// Use this for initialization
@@ -58,6 +61,7 @@ public class GameManager : MonoBehaviour {
 
         soundProcessor.onSpawn += GameObjectSpawn;
 
+        soundProcessor.GetComponent<AudioSource>().Play();
         Invoke("StartSong", secondsToBeginSong);
 	}
 
@@ -93,10 +97,16 @@ public class GameManager : MonoBehaviour {
 		}
 		//Button Pause?
 
-		//Lado Esquerdo
-
-
-		//Lado Direito
+		//confere se a música já terminou de tocar
+        //tem que conferir tanto no preprocessor quanto no reprodutor da música
+        if(!gameSong.isPlaying && !soundProcessor.GetComponent<AudioSource>().isPlaying)
+        {
+            // chama funçãod e fim de jogo
+            Debug.Log("Terminou a partida");
+            Debug.Log("combo count: " + comboCount + " comboMax: " + comboMax);
+            if (comboMax < comboCount) comboMax = comboCount;
+            EndGame(true);
+        }
 	}
 
 	void UpdateScore(GameObject obj, GameObject area){
@@ -108,7 +118,7 @@ public class GameManager : MonoBehaviour {
             plantController.UpdateEnergia(energia);
 			comboCount++;
 			countPerfeito++;
-		} else if (Mathf.Abs (area.transform.position.y - obj.transform.position.y) < bom) {
+        } else if (Mathf.Abs (area.transform.position.y - obj.transform.position.y) < bom) {
 			score += scoreBom;
             energia += scoreBom;
             if (energia > 100) energia = 100;
@@ -121,7 +131,11 @@ public class GameManager : MonoBehaviour {
             if (energia <= 0)
             {
                 //chama função de derrota
+                Debug.Log("Terminou a partida");
+                EndGame(false);
             }
+            Debug.Log("combo count: " + comboCount + " comboMax: " + comboMax);
+            if (comboMax < comboCount) comboMax = comboCount;
             comboCount = 0;
 			countErros++;
 			//Fail
@@ -143,7 +157,11 @@ public class GameManager : MonoBehaviour {
         if (energia <= 0)
         {
             //chama função de derrota
+            Debug.Log("Terminou a partida");
+            EndGame(false);
         }
+        Debug.Log("combo count: " + comboCount + " comboMax: " + comboMax);
+        if (comboMax < comboCount) comboMax = comboCount;
         comboCount = 0;
         countErros++;
         Destroy(ok);
@@ -152,5 +170,44 @@ public class GameManager : MonoBehaviour {
     public void SetMusic(int index)
     {
         gameSong.clip = musics[index];
+    }
+
+    public void EndGame(bool win)
+    {
+        float scoreResult = ((float)(countBom + (2 * countPerfeito)) / (float)(countErros + countBom + (2 * countPerfeito)));
+        string scoreString =  "E";
+
+        if(scoreResult == 1)
+        {
+            scoreString = "S";
+        }
+        else if (scoreResult > 0.9f)
+        {
+            scoreString = "A";
+        }
+        else if (scoreResult > 0.8f)
+        {
+            scoreString = "B";
+        }
+        else if (scoreResult > 0.7f)
+        {
+            scoreString = "C";
+        }
+        else if (scoreResult > 0.6f)
+        {
+            scoreString = "D";
+        }
+        else if (scoreResult > 0.5f)
+        {
+            scoreString = "E";
+        }
+
+        GlobalVars.Instance.countBom = countBom;
+        GlobalVars.Instance.countPerfeito = countPerfeito;
+        GlobalVars.Instance.countErros = countErros;
+        GlobalVars.Instance.comboMax = comboMax;
+        GlobalVars.Instance.rank = scoreString;
+        GlobalVars.Instance.win = win;
+        SceneManager.LoadScene("EndGame");
     }
 }

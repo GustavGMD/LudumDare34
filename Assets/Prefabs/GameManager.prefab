@@ -43,7 +43,10 @@ MonoBehaviour:
   plantController: {fileID: 0}
   backgroundController: {fileID: 0}
   gameSong: {fileID: 0}
-  musics: []
+  musics:
+  - {fileID: 8300000, guid: 2c3b61ea46e0849488c2c02d8b7989d2, type: 3}
+  - {fileID: 8300000, guid: 0247559169b9a65469adba93f7e77e02, type: 3}
+  - {fileID: 8300000, guid: c30919a73bcb3b34d95b21225f35beda, type: 3}
   secondsToBeginSong: 3
   score: 0
   ritmoModel: {fileID: 174416, guid: f2614bfc3f0f1433685af4a4cf667ba3, type: 2}

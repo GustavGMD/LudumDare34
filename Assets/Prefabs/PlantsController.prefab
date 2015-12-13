@@ -181,7 +181,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantsBase:
+  - {fileID: 128220}
   - {fileID: 162158}
+  - {fileID: 118714}
 --- !u!212 &21249516
 SpriteRenderer:
   m_ObjectHideFlags: 1

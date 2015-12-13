@@ -40,8 +40,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300001, guid: e291de85885494f1f9bd15d46ab272d7,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 398d0ee8d3faa42aead12340eddd144b, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 914b72567bd6bc145b744fd8b6b1b469, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -131,6 +131,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e144af659d9d4572a0eea7a05d32068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musics:
+  - {fileID: 8300000, guid: 72f8cfa88a1427b4ca7442b36c210e8b, type: 3}
+  - {fileID: 8300000, guid: 0247559169b9a65469adba93f7e77e02, type: 3}
+  - {fileID: 8300000, guid: 914b72567bd6bc145b744fd8b6b1b469, type: 3}
   ritmoModel: {fileID: 174416, guid: f2614bfc3f0f1433685af4a4cf667ba3, type: 2}
   bandNormalizer: 100
   lastBand: []
