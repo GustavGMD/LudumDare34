@@ -16,7 +16,7 @@ public class levelManager : MonoBehaviour {
 
 	public Button[] selectPlant;
 
-	public Sprite spritePlant;
+	public GameObject plant;
 	// Use this for initialization
 	void Start () {
 		plantSelected = 0;
@@ -25,15 +25,18 @@ public class levelManager : MonoBehaviour {
 			levelButtons [i].GetComponentInChildren<Text> ().text = " "+(i+1);
 			levelButtons [i].onClick.AddListener (delegate {
 				level = num;
-				//
 				transicao();
 			});
 		}
+
 		for (int i = 0; i < selectPlant.Length; i++) {
+			int nums = i;
 			selectPlant [i].onClick.AddListener (delegate {
-				changePlant (i);
+				changePlant (nums);
 			});
 		}
+
+		changePlant (0);
 
 		/*for (int i = 0; i < levels; i++) {
 			Vector3 pos = new Vector3 (x+ (i%3)*stepx, y + (i/3)*stepy);
@@ -64,16 +67,15 @@ public class levelManager : MonoBehaviour {
 
 	void changeSprite(){
 		//Animation para mudar a sprite?
-
-
+		plant.GetComponent<SpriteRenderer> ().sprite = sprites [plantSelected];
 	}
 
 	void transicao(){
 		//Debug.Log ("Level: " + level);
 		GlobalVars vars = GlobalVars.Instance;
 		vars.levelAtual = level;
-		//SceneManager.LoadScene ("level" + level.ToString ("d2"));
-		//
+		vars.plantSelected = plantSelected;
+		SceneManager.LoadScene ("GameScene");
 	}
 
 }

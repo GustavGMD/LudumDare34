@@ -47,9 +47,11 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AppleScript.cs" />
      <Compile Include="Assets\Scripts\EndGame.cs" />
+     <Compile Include="Assets\Scripts\EndLine.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\GlobalVars.cs" />
      <Compile Include="Assets\Scripts\IncialScene.cs" />
+     <Compile Include="Assets\Scripts\PlantController.cs" />
      <Compile Include="Assets\Scripts\RenderQueue.cs" />
      <Compile Include="Assets\Scripts\RitmoMovement.cs" />
      <Compile Include="Assets\Scripts\SoundProcessor.cs" />

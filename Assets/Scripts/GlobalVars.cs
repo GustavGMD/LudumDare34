@@ -22,6 +22,8 @@ public class GlobalVars {
 
 	public int plantSelected;
 
+	public int levelUnlocked;
+
 	public static GlobalVars Instance
 	{
 		get 
