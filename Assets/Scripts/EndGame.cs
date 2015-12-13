@@ -23,17 +23,22 @@ public class EndGame : MonoBehaviour {
 		GlobalVars vars = GlobalVars.Instance;
 
 		if (vars.win) {
-			labels [4].text = "Sucess";
-			labels [5].text = vars.rank;
+			labels [5].text = "Sucess";
+			labels [6].text = vars.rank;
 		} else {
-			labels [4].text = "Fail";
-			labels [5].text = " ";
+			labels [5].text = "Fail";
+			labels [6].text = " ";
 		}
 
 		values [0] = vars.countPerfeito;
 		values [1] = vars.countBom;
 		values [2] = vars.comboMax;
 		values [3] = vars.countErros;
+		int max = values [0] + values [1] + values [3];
+		int acertos = values [0] + values [1];
+		values [4] = (acertos / max) * 100;
+
+		Debug.Log ("Acertos: "+values[4]);
 
 		for (int i = 0; i < values.Length; i++) {
 			labels[i].text = " " +values[i];
