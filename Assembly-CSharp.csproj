@@ -50,6 +50,8 @@
      <Compile Include="Assets\Scripts\RenderQueue.cs" />
      <Compile Include="Assets\Scripts\RitmoMovement.cs" />
      <Compile Include="Assets\Scripts\SoundProcessor.cs" />
+     <Compile Include="Assets\Scripts\buttonLevel.cs" />
+     <Compile Include="Assets\Scripts\levelManager.cs" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
