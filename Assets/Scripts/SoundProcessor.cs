@@ -7,6 +7,7 @@ public class SoundProcessor : MonoBehaviour {
 
     public event Action onSpawn;
 
+    public AudioClip[] musics;
     public GameObject ritmoModel;
 
     public float bandNormalizer = 100;
@@ -65,6 +66,11 @@ public class SoundProcessor : MonoBehaviour {
         }
 
         //currentDeltaSum = 0;
+    }
+
+    public void SetMusic(int index)
+    {
+        GetComponent<AudioSource>().clip = musics[index];
     }
 
     /**

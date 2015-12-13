@@ -41,7 +41,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundProcessor: {fileID: 0}
   plantController: {fileID: 0}
+  backgroundController: {fileID: 0}
   gameSong: {fileID: 0}
+  musics: []
   secondsToBeginSong: 3
   score: 0
   ritmoModel: {fileID: 174416, guid: f2614bfc3f0f1433685af4a4cf667ba3, type: 2}

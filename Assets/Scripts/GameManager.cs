@@ -6,8 +6,10 @@ public class GameManager : MonoBehaviour {
 
     public SoundProcessor soundProcessor;
     public PlantController plantController;
+    public BackgroundController backgroundController;
 
     public AudioSource gameSong;
+    public AudioClip[] musics;
 
     public float secondsToBeginSong = 3;
 
@@ -39,6 +41,12 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        //inicializa o level
+        plantController.SetPlayer(GlobalVars.Instance.plantSelected);
+        SetMusic(GlobalVars.Instance.levelAtual);
+        soundProcessor.SetMusic(GlobalVars.Instance.levelAtual);
+        backgroundController.SetBackground(GlobalVars.Instance.levelAtual);
+
 		//InvokeRepeating("GameObjectSpawn", 0.0f, 2.0f); // update at 15 fps
 		countPerfeito = 0;
 		countBom = 0;
@@ -139,5 +147,10 @@ public class GameManager : MonoBehaviour {
         comboCount = 0;
         countErros++;
         Destroy(ok);
+    }
+
+    public void SetMusic(int index)
+    {
+        gameSong.clip = musics[index];
     }
 }
