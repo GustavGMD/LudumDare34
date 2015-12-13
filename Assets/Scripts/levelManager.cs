@@ -36,7 +36,7 @@ public class levelManager : MonoBehaviour {
 			});
 		}
 
-		changePlant (0);
+		changeSprite ();
 
 		/*for (int i = 0; i < levels; i++) {
 			Vector3 pos = new Vector3 (x+ (i%3)*stepx, y + (i/3)*stepy);

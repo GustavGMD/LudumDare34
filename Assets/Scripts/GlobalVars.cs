@@ -16,13 +16,15 @@ public class GlobalVars {
 
 	public int comboMax;
 
-	public int rank;
+	public string rank;
 
 	//Colocar a planta tbm
 
 	public int plantSelected;
 
 	public int levelUnlocked;
+
+	public bool win;
 
 	public static GlobalVars Instance
 	{
