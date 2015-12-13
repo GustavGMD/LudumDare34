@@ -46,10 +46,14 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AppleScript.cs" />
+     <Compile Include="Assets\Scripts\EndGame.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\GlobalVars.cs" />
+     <Compile Include="Assets\Scripts\IncialScene.cs" />
      <Compile Include="Assets\Scripts\RenderQueue.cs" />
      <Compile Include="Assets\Scripts\RitmoMovement.cs" />
      <Compile Include="Assets\Scripts\SoundProcessor.cs" />
+     <Compile Include="Assets\Scripts\levelManager.cs" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
