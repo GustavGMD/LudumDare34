@@ -23,9 +23,11 @@ public class EndGame : MonoBehaviour {
 		GlobalVars vars = GlobalVars.Instance;
 
 		if (vars.win) {
-			labels [4] = "Sucess " + vars.rank;
+			labels [4].text = "Sucess";
+			labels [5].text = vars.rank;
 		} else {
-			labels [4] = "Fail";
+			labels [4].text = "Fail";
+			labels [5].text = " ";
 		}
 
 		values [0] = vars.countPerfeito;
