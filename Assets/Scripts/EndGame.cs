@@ -35,7 +35,7 @@ public class EndGame : MonoBehaviour {
 		values [2] = vars.comboMax;
 		values [3] = vars.countErros;
 
-		for (int i = 0; i < labels.Length; i++) {
+		for (int i = 0; i < values.Length; i++) {
 			labels[i].text = " " +values[i];
 		}
 
