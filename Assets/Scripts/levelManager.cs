@@ -12,7 +12,7 @@ public class levelManager : MonoBehaviour {
 
 	public int plantSelected;
 
-	public Sprite[] sprites; 
+	public Sprite[] sprites;
 
 	public Button[] selectPlant;
 
@@ -70,6 +70,8 @@ public class levelManager : MonoBehaviour {
 
 	void transicao(){
 		//Debug.Log ("Level: " + level);
+		GlobalVars vars = GlobalVars.Instance;
+		vars.levelAtual = level;
 		//SceneManager.LoadScene ("level" + level.ToString ("d2"));
 		//
 	}
