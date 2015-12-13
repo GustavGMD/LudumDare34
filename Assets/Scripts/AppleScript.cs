@@ -16,7 +16,7 @@ public class AppleScript : MonoBehaviour
     //public float[] band1;
     //public float[] band2;
 
-    public GameObject[] g;
+    //public GameObject[] g;
 
     void Awake()
     {
@@ -43,16 +43,16 @@ public class AppleScript : MonoBehaviour
         band = new float[k + 1];
         //band1 = new float[k + 1];
         //band2 = new float[k + 1];
-        g = new GameObject[k + 1];
+        //g = new GameObject[k + 1];
 
         /**/
         for (int i = 0; i < band.Length; i++)
         {
             band[i] = 0;
-            g[i] = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            g[i].GetComponent<MeshRenderer>().material.SetColor("_Color", Color.cyan);
-            g[i].transform.position = new Vector3(i, 0, 0) + transform.position;
-            g[i].transform.SetParent(transform);
+            //g[i] = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            //g[i].GetComponent<MeshRenderer>().material.SetColor("_Color", Color.cyan);
+            //g[i].transform.position = new Vector3(i, 0, 0) + transform.position;
+            //g[i].transform.SetParent(transform);
         }
         /**/
         InvokeRepeating("Check", 0.0f, 1.0f / 60.0f); // update at 15 fps
@@ -78,8 +78,8 @@ public class AppleScript : MonoBehaviour
             {
                 k++;
                 crossover *= 2;   // frequency crossover point for each band.
-                Vector3 tmp = new Vector3(g[k].transform.position.x, band[k] * 32, g[k].transform.position.z);
-                g[k].transform.position = tmp;
+                //Vector3 tmp = new Vector3(g[k].transform.position.x, band[k] * 32, g[k].transform.position.z);
+                //g[k].transform.position = tmp;
                 band[k] = 0;
             }
         }

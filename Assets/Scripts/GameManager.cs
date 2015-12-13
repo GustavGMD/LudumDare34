@@ -4,6 +4,13 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
 
+    public SoundProcessor soundProcessor;
+    public PlantController plantController;
+
+    public AudioSource gameSong;
+
+    public float secondsToBeginSong = 3;
+
 	public int score;
 
 	public Queue<GameObject>[] filaRitmos;
@@ -16,8 +23,10 @@ public class GameManager : MonoBehaviour {
 
 	public Vector3[] spawnPosition;
 
+    public int scorePerfeito = 10;
 	public float perfeito;
 
+    public int scoreBom = 5;
 	public float bom;
 
 	public int countPerfeito;
@@ -26,9 +35,11 @@ public class GameManager : MonoBehaviour {
 
 	public int countErros;
 
+    public int energia = 50;
+
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating("GameObjectSpawn", 0.0f, 2.0f); // update at 15 fps
+		//InvokeRepeating("GameObjectSpawn", 0.0f, 2.0f); // update at 15 fps
 		countPerfeito = 0;
 		countBom = 0;
 		countErros = 0;
@@ -36,6 +47,10 @@ public class GameManager : MonoBehaviour {
 		filaRitmos = new Queue<GameObject>[2];
 		filaRitmos[0] = new Queue<GameObject>();
 		filaRitmos[1] = new Queue<GameObject>();
+
+        soundProcessor.onSpawn += GameObjectSpawn;
+
+        Invoke("StartSong", secondsToBeginSong);
 	}
 
 	void GameObjectSpawn(){
@@ -64,9 +79,8 @@ public class GameManager : MonoBehaviour {
 				ind = 0;
 			}
 			if (filaRitmos[ind].Count > 0) {
-				GameObject ok = (GameObject)filaRitmos[ind].Dequeue ();
+				GameObject ok = filaRitmos[ind].Dequeue ();
 				UpdateScore (ok, area[ind]);
-				Destroy (ok);
 			}
 		}
 		//Button Pause?
@@ -78,20 +92,52 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void UpdateScore(GameObject obj, GameObject area){
-		
+        		
 		if (Mathf.Abs (area.transform.position.y - obj.transform.position.y) < perfeito) {
-			score += 10;
+			score += scorePerfeito;
+            energia += scorePerfeito;
+            if (energia > 100) energia = 100;
+            plantController.UpdateEnergia(energia);
 			comboCount++;
 			countPerfeito++;
 		} else if (Mathf.Abs (area.transform.position.y - obj.transform.position.y) < bom) {
-			score += 8;
-			comboCount++;
+			score += scoreBom;
+            energia += scoreBom;
+            if (energia > 100) energia = 100;
+            plantController.UpdateEnergia(energia);
+            comboCount++;
 			countBom++;
 		} else {
-			comboCount = 0;
+            energia -= scoreBom;
+            plantController.UpdateEnergia(energia);
+            if (energia <= 0)
+            {
+                //chama função de derrota
+            }
+            comboCount = 0;
 			countErros++;
 			//Fail
 		}
-		
-	}
+
+        Destroy(obj);
+    }
+
+    void StartSong()
+    {
+        gameSong.Play();
+    }
+
+    public void ObjectCollidedWithEndLine(int index)
+    {
+        GameObject ok = filaRitmos[index].Dequeue();
+        energia -= scoreBom;
+        plantController.UpdateEnergia(energia);
+        if (energia <= 0)
+        {
+            //chama função de derrota
+        }
+        comboCount = 0;
+        countErros++;
+        Destroy(ok);
+    }
 }

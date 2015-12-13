@@ -39,6 +39,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1917ebe45d7ea40ff9895e099c4e72bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundProcessor: {fileID: 0}
+  plantController: {fileID: 0}
+  gameSong: {fileID: 0}
+  secondsToBeginSong: 3
   score: 0
   ritmoModel: {fileID: 174416, guid: f2614bfc3f0f1433685af4a4cf667ba3, type: 2}
   area:
@@ -46,13 +50,16 @@ MonoBehaviour:
   - {fileID: 0}
   comboCount: 0
   spawnPosition:
-  - {x: -1.53999996, y: 4.23999977, z: 0}
-  - {x: 1.53999996, y: 4.23999977, z: 0}
-  perfeito: .0799999982
-  bom: .219999999
+  - {x: -1.54, y: 6.5, z: 0}
+  - {x: 1.54, y: 6.5, z: 0}
+  scorePerfeito: 10
+  perfeito: 0.08
+  scoreBom: 5
+  bom: 0.22
   countPerfeito: 0
   countBom: 0
   countErros: 0
+  energia: 50
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
