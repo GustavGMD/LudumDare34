@@ -802,6 +802,14 @@ MonoBehaviour:
   - {fileID: 1971327004}
   totalLevels: 0
   level: 0
+  plantSelected: 0
+  sprites:
+  - {fileID: 21300000, guid: 28ef74a99e5ff417485c8d66771a1eb3, type: 3}
+  - {fileID: 21300000, guid: 8ab801bcf8d4b4043b61b4c3aca75f0b, type: 3}
+  selectPlant:
+  - {fileID: 1473300854}
+  - {fileID: 365636613}
+  spritePlant: {fileID: 0}
 --- !u!4 &1161281424
 Transform:
   m_ObjectHideFlags: 0
