@@ -36,13 +36,12 @@ public class EndGame : MonoBehaviour {
 		values [3] = vars.countErros;
 		int max = values [0] + values [1] + values [3];
 		int acertos = values [0] + values [1];
-		values [4] = (acertos / max) * 100;
-
-		Debug.Log ("Acertos: "+values[4]);
+		float hits = ((float)acertos / max) * 100;
 
 		for (int i = 0; i < values.Length; i++) {
 			labels[i].text = " " +values[i];
 		}
+		labels[4].text = " " + hits.ToString("##")+"%";
 
 		back.onClick.AddListener (delegate {
 			SceneManager.LoadScene ("SelectLevel");

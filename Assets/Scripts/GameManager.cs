@@ -102,8 +102,6 @@ public class GameManager : MonoBehaviour {
         if(!gameSong.isPlaying && !soundProcessor.GetComponent<AudioSource>().isPlaying)
         {
             // chama funçãod e fim de jogo
-            Debug.Log("Terminou a partida");
-            Debug.Log("combo count: " + comboCount + " comboMax: " + comboMax);
             if (comboMax < comboCount) comboMax = comboCount;
             EndGame(true);
         }
@@ -131,10 +129,9 @@ public class GameManager : MonoBehaviour {
             if (energia <= 0)
             {
                 //chama função de derrota
-                Debug.Log("Terminou a partida");
                 EndGame(false);
             }
-            Debug.Log("combo count: " + comboCount + " comboMax: " + comboMax);
+     
             if (comboMax < comboCount) comboMax = comboCount;
             comboCount = 0;
 			countErros++;
@@ -157,10 +154,10 @@ public class GameManager : MonoBehaviour {
         if (energia <= 0)
         {
             //chama função de derrota
-            Debug.Log("Terminou a partida");
+           
             EndGame(false);
         }
-        Debug.Log("combo count: " + comboCount + " comboMax: " + comboMax);
+
         if (comboMax < comboCount) comboMax = comboCount;
         comboCount = 0;
         countErros++;
