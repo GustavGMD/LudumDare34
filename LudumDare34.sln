@@ -1,7 +1,7 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{7C827368-6708-F40C-A125-C9BDB1EE1ABE}") = "LudumDare34", "Assembly-CSharp.csproj", "{435B829B-09A0-780D-B64D-B2A9CDD92045}"
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LudumDare34.CSharp", "LudumDare34.CSharp.csproj", "{5A271EF8-ECBF-B3DD-B14F-9F6D8FE03C79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +9,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{435B829B-09A0-780D-B64D-B2A9CDD92045}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{435B829B-09A0-780D-B64D-B2A9CDD92045}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{435B829B-09A0-780D-B64D-B2A9CDD92045}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{435B829B-09A0-780D-B64D-B2A9CDD92045}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A271EF8-ECBF-B3DD-B14F-9F6D8FE03C79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A271EF8-ECBF-B3DD-B14F-9F6D8FE03C79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A271EF8-ECBF-B3DD-B14F-9F6D8FE03C79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A271EF8-ECBF-B3DD-B14F-9F6D8FE03C79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal

@@ -71,7 +71,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -82,7 +81,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -93,7 +91,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -104,7 +101,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!114 &11412480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -138,7 +134,7 @@ MonoBehaviour:
   deltaDeltaBand: []
   currentDeltaSum: 0
   ritmoThreshold: 300
-  deltaThreshold: 0.3
+  deltaThreshold: .300000012
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

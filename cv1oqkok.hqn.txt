@@ -1,0 +1,50 @@
+﻿Revert "Merge remote-tracking branch 'origin/master'"
+
+This reverts commit df976d848adbd7895bb472ca10d6514c98516a27, reversing
+changes made to a7df4c0050e554945d47539afc331603f1dec4ca.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   Assembly-CSharp.csproj
+#	deleted:    Assets/Prefabs/Button.prefab
+#	deleted:    Assets/Prefabs/Button.prefab.meta
+#	modified:   Assets/Prefabs/SoundPreprocessor.prefab
+#	deleted:    Assets/Scenes/EndGame.unity
+#	deleted:    Assets/Scenes/EndGame.unity.meta
+#	modified:   Assets/Scenes/GameScene.unity
+#	deleted:    Assets/Scenes/Inicial.unity
+#	deleted:    Assets/Scenes/Inicial.unity.meta
+#	deleted:    Assets/Scenes/SelectLevel.unity
+#	deleted:    Assets/Scenes/SelectLevel.unity.meta
+#	deleted:    Assets/Scripts/EndGame.cs
+#	deleted:    Assets/Scripts/EndGame.cs.meta
+#	deleted:    Assets/Scripts/GlobalVars.cs
+#	deleted:    Assets/Scripts/GlobalVars.cs.meta
+#	deleted:    Assets/Scripts/IncialScene.cs
+#	deleted:    Assets/Scripts/IncialScene.cs.meta
+#	deleted:    Assets/Scripts/levelManager.cs
+#	deleted:    Assets/Scripts/levelManager.cs.meta
+#	deleted:    Assets/Sprites/1001 Nights Cactus/1001 Nights Cactus-Frame001.png
+#	deleted:    Assets/Sprites/1001 Nights Cactus/1001 Nights Cactus-Frame002.png
+#	deleted:    Assets/Sprites/1001 Nights Cactus/1001 Nights Cactus-Frame003.png
+#	deleted:    Assets/Sprites/1001 Nights Cactus/1001 Nights Cactus-Frame004.png
+#	deleted:    Assets/Sprites/1001 Nights Cactus/1001 Nights Cactus-Frame005.png
+#	modified:   Assets/Sprites/theREGULARone/theREGULARone-Frame001.png
+#	modified:   Assets/Sprites/theREGULARone/theREGULARone-Frame002.png
+#	modified:   Assets/Sprites/theREGULARone/theREGULARone-Frame003.png
+#	modified:   Assets/Sprites/theREGULARone/theREGULARone-Frame004.png
+#	modified:   Assets/Sprites/theREGULARone/theREGULARone-Frame005.png
+#	modified:   "Assets/Sprites/theREGULARone/theREGULARoneSemCabe\303\247a-Frame001.png"
+#	modified:   "Assets/Sprites/theREGULARone/theREGULARoneSemCabe\303\247a-Frame002.png"
+#	modified:   "Assets/Sprites/theREGULARone/theREGULARoneSemCabe\303\247a-Frame003.png"
+#	modified:   "Assets/Sprites/theREGULARone/theREGULARoneSemCabe\303\247a-Frame004.png"
+#	modified:   "Assets/Sprites/theREGULARone/theREGULARoneSemCabe\303\247a-Frame005.png"
+#	modified:   LudumDare34.sln
+#	modified:   LudumDare34.userprefs
+#	modified:   ProjectSettings/EditorBuildSettings.asset
+#
+
