@@ -57,24 +57,22 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AppleScript.cs" />
+    <Compile Include="Assets\Scripts\EndGame.cs" />
     <Compile Include="Assets\Scripts\EndLine.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\GlobalVars.cs" />
+    <Compile Include="Assets\Scripts\IncialScene.cs" />
     <Compile Include="Assets\Scripts\PlantController.cs" />
     <Compile Include="Assets\Scripts\RenderQueue.cs" />
     <Compile Include="Assets\Scripts\RitmoMovement.cs" />
     <Compile Include="Assets\Scripts\SoundProcessor.cs" />
+    <Compile Include="Assets\Scripts\levelManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
