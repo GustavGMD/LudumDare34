@@ -48,8 +48,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0247559169b9a65469adba93f7e77e02, type: 3}
   - {fileID: 8300000, guid: c30919a73bcb3b34d95b21225f35beda, type: 3}
   particulas:
-  - {fileID: 176444, guid: 34b0c5d204746074ca55551692284f35, type: 2}
   - {fileID: 121404, guid: fe4f4b034bf3f6143963fb5a7a3e069e, type: 2}
+  - {fileID: 176444, guid: 34b0c5d204746074ca55551692284f35, type: 2}
   - {fileID: 133706, guid: 6447d3d218598c849bac912d202e70bc, type: 2}
   secondsToBeginSong: 3
   score: 0
@@ -62,9 +62,9 @@ MonoBehaviour:
   - {x: -1.54, y: 6.5, z: 0}
   - {x: 1.54, y: 6.5, z: 0}
   scorePerfeito: 10
-  perfeito: 0.08
+  perfeito: 0.15
   scoreBom: 5
-  bom: 0.22
+  bom: 0.5
   countPerfeito: 0
   countBom: 0
   countErros: 0

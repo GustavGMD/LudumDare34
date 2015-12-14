@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musics:
-  - {fileID: 8300000, guid: 72f8cfa88a1427b4ca7442b36c210e8b, type: 3}
+  - {fileID: 8300000, guid: 3b7c05ebac9e00c498c99b3d7335b6c3, type: 3}
   - {fileID: 8300000, guid: 0247559169b9a65469adba93f7e77e02, type: 3}
   - {fileID: 8300000, guid: 914b72567bd6bc145b744fd8b6b1b469, type: 3}
   ritmoModel: {fileID: 174416, guid: f2614bfc3f0f1433685af4a4cf667ba3, type: 2}

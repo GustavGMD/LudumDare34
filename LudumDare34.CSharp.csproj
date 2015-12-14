@@ -81,6 +81,7 @@
     <None Include="Assets\3D Particles\3D Particles - Readme.txt" />
     <None Include="Assets\3D Particles\Shaders\Mobile Vertex Color Cull Off.shader" />
     <None Include="Assets\3D Particles\Simple Particle Scaler\Simple Particle Scaler - Readme.txt" />
+    <None Include="Assets\Fonts\Flubber.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

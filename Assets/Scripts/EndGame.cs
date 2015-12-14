@@ -25,6 +25,7 @@ public class EndGame : MonoBehaviour {
 		if (vars.win) {
 			labels [5].text = "Sucess";
 			labels [6].text = vars.rank;
+            levelManager.SetLevelUnlocked(GlobalVars.Instance.levelAtual, true);
 		} else {
 			labels [5].text = "Fail";
 			labels [6].text = " ";
