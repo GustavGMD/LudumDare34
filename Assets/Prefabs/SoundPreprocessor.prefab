@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musics:
-  - {fileID: 8300000, guid: 3b7c05ebac9e00c498c99b3d7335b6c3, type: 3}
+  - {fileID: 8300000, guid: 4b8bb5839deb2ab4bb256c73e3c1786d, type: 3}
   - {fileID: 8300000, guid: 0247559169b9a65469adba93f7e77e02, type: 3}
   - {fileID: 8300000, guid: 914b72567bd6bc145b744fd8b6b1b469, type: 3}
   ritmoModel: {fileID: 174416, guid: f2614bfc3f0f1433685af4a4cf667ba3, type: 2}
@@ -154,6 +154,10 @@ Prefab:
       propertyPath: ritmoModel
       value: 
       objectReference: {fileID: 174416, guid: f2614bfc3f0f1433685af4a4cf667ba3, type: 2}
+    - target: {fileID: 0}
+      propertyPath: musics.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4b8bb5839deb2ab4bb256c73e3c1786d, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 127680}

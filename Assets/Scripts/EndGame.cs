@@ -23,13 +23,15 @@ public class EndGame : MonoBehaviour {
 		GlobalVars vars = GlobalVars.Instance;
 
 		if (vars.win) {
-			labels [5].text = "Sucess";
+			//labels [5].text = "Sucess";
 			labels [6].text = vars.rank;
+            labels[6].color = Color.yellow;
             levelManager.SetLevelUnlocked(GlobalVars.Instance.levelAtual, true);
 		} else {
-			labels [5].text = "Fail";
-			labels [6].text = " ";
-		}
+			//labels [5].text = "Fail";
+			labels [6].text = "Fail";
+            labels[6].color = Color.red;
+        }
 
 		values [0] = vars.countPerfeito;
 		values [1] = vars.countBom;
@@ -40,9 +42,9 @@ public class EndGame : MonoBehaviour {
 		float hits = ((float)acertos / max) * 100;
 
 		for (int i = 0; i < values.Length; i++) {
-			labels[i].text = " " +values[i];
+			labels[i].text = values[i].ToString();
 		}
-		labels[4].text = " " + hits.ToString("##")+"%";
+		labels[4].text = hits.ToString("##")+"%";
 
 		back.onClick.AddListener (delegate {
 			SceneManager.LoadScene ("SelectLevel");
