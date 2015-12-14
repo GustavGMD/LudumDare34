@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\3D Particles\Scripts\SmoothCameraOrbit.cs" />
     <Compile Include="Assets\Scripts\AppleScript.cs" />
     <Compile Include="Assets\Scripts\BackgroundController.cs" />
     <Compile Include="Assets\Scripts\EndGame.cs" />
@@ -69,11 +70,17 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GlobalVars.cs" />
     <Compile Include="Assets\Scripts\IncialScene.cs" />
+    <Compile Include="Assets\Scripts\ParticleController.cs" />
     <Compile Include="Assets\Scripts\PlantController.cs" />
     <Compile Include="Assets\Scripts\RenderQueue.cs" />
     <Compile Include="Assets\Scripts\RitmoMovement.cs" />
     <Compile Include="Assets\Scripts\SoundProcessor.cs" />
     <Compile Include="Assets\Scripts\levelManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\3D Particles\3D Particles - Readme.txt" />
+    <None Include="Assets\3D Particles\Shaders\Mobile Vertex Color Cull Off.shader" />
+    <None Include="Assets\3D Particles\Simple Particle Scaler\Simple Particle Scaler - Readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

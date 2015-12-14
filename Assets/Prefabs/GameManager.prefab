@@ -47,6 +47,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2c3b61ea46e0849488c2c02d8b7989d2, type: 3}
   - {fileID: 8300000, guid: 0247559169b9a65469adba93f7e77e02, type: 3}
   - {fileID: 8300000, guid: c30919a73bcb3b34d95b21225f35beda, type: 3}
+  particulas:
+  - {fileID: 176444, guid: 34b0c5d204746074ca55551692284f35, type: 2}
+  - {fileID: 121404, guid: fe4f4b034bf3f6143963fb5a7a3e069e, type: 2}
+  - {fileID: 133706, guid: 6447d3d218598c849bac912d202e70bc, type: 2}
   secondsToBeginSong: 3
   score: 0
   ritmoModel: {fileID: 174416, guid: f2614bfc3f0f1433685af4a4cf667ba3, type: 2}
@@ -64,6 +68,7 @@ MonoBehaviour:
   countPerfeito: 0
   countBom: 0
   countErros: 0
+  comboMax: 0
   energia: 50
 --- !u!1001 &100100000
 Prefab:

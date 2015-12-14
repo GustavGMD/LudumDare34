@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour {
     public AudioSource gameSong;
     public AudioClip[] musics;
 
+    public GameObject[] particulas;
+
     public float secondsToBeginSong = 3;
 
 	public int score;
@@ -116,6 +118,7 @@ public class GameManager : MonoBehaviour {
             plantController.UpdateEnergia(energia);
 			comboCount++;
 			countPerfeito++;
+            SpawnParticula(0, obj.transform.position);
         } else if (Mathf.Abs (area.transform.position.y - obj.transform.position.y) < bom) {
 			score += scoreBom;
             energia += scoreBom;
@@ -123,7 +126,8 @@ public class GameManager : MonoBehaviour {
             plantController.UpdateEnergia(energia);
             comboCount++;
 			countBom++;
-		} else {
+            SpawnParticula(1, obj.transform.position);
+        } else {
             energia -= scoreBom;
             plantController.UpdateEnergia(energia);
             if (energia <= 0)
@@ -135,8 +139,9 @@ public class GameManager : MonoBehaviour {
             if (comboMax < comboCount) comboMax = comboCount;
             comboCount = 0;
 			countErros++;
-			//Fail
-		}
+            //Fail
+            SpawnParticula(2, obj.transform.position);
+        }
 
         Destroy(obj);
     }
@@ -161,6 +166,8 @@ public class GameManager : MonoBehaviour {
         if (comboMax < comboCount) comboMax = comboCount;
         comboCount = 0;
         countErros++;
+
+        SpawnParticula(2, ok.transform.position);
         Destroy(ok);
     }
 
@@ -206,5 +213,10 @@ public class GameManager : MonoBehaviour {
         GlobalVars.Instance.rank = scoreString;
         GlobalVars.Instance.win = win;
         SceneManager.LoadScene("EndGame");
+    }
+
+    public void SpawnParticula(int index, Vector3 position)
+    {
+        GameObject temp = (GameObject)Instantiate(particulas[index], position, Quaternion.identity);
     }
 }
