@@ -24,12 +24,12 @@ public class EndGame : MonoBehaviour {
 
 		if (vars.win) {
 			//labels [5].text = "Sucess";
-			labels [6].text = vars.rank;
+			labels[6].text = vars.rank;
             labels[6].color = Color.yellow;
-            levelManager.SetLevelUnlocked(GlobalVars.Instance.levelAtual, true);
+            levelManager.SetLevelUnlocked(GlobalVars.Instance.levelAtual+1, true);
 		} else {
 			//labels [5].text = "Fail";
-			labels [6].text = "Fail";
+			labels[6].text = "Fail";
             labels[6].color = Color.red;
         }
 
