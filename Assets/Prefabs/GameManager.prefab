@@ -45,7 +45,7 @@ MonoBehaviour:
   gameSong: {fileID: 0}
   musics:
   - {fileID: 8300000, guid: 2c3b61ea46e0849488c2c02d8b7989d2, type: 3}
-  - {fileID: 8300000, guid: 0247559169b9a65469adba93f7e77e02, type: 3}
+  - {fileID: 8300000, guid: 477b35933fb27454b8ad55af1778ed87, type: 3}
   - {fileID: 8300000, guid: c30919a73bcb3b34d95b21225f35beda, type: 3}
   particulas:
   - {fileID: 121404, guid: fe4f4b034bf3f6143963fb5a7a3e069e, type: 2}

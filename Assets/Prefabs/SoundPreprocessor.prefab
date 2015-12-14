@@ -38,8 +38,7 @@ AudioSource:
   m_GameObject: {fileID: 127680}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300001, guid: e291de85885494f1f9bd15d46ab272d7,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 914b72567bd6bc145b744fd8b6b1b469, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -133,7 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musics:
   - {fileID: 8300000, guid: 4b8bb5839deb2ab4bb256c73e3c1786d, type: 3}
-  - {fileID: 8300000, guid: 0247559169b9a65469adba93f7e77e02, type: 3}
+  - {fileID: 8300000, guid: 777713c8ef8e937448a56e528821ae48, type: 3}
   - {fileID: 8300000, guid: 914b72567bd6bc145b744fd8b6b1b469, type: 3}
   ritmoModel: {fileID: 174416, guid: f2614bfc3f0f1433685af4a4cf667ba3, type: 2}
   bandNormalizer: 100
@@ -141,8 +140,8 @@ MonoBehaviour:
   deltaBand: []
   deltaDeltaBand: []
   currentDeltaSum: 0
-  ritmoThreshold: 300
-  deltaThreshold: 0.3
+  ritmoThreshold: 150
+  deltaThreshold: 0.15
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -158,6 +157,10 @@ Prefab:
       propertyPath: musics.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 4b8bb5839deb2ab4bb256c73e3c1786d, type: 3}
+    - target: {fileID: 0}
+      propertyPath: ritmoThreshold
+      value: 150
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 127680}

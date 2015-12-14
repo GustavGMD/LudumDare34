@@ -6,16 +6,15 @@ using UnityEngine.SceneManagement;
 public class IncialScene : MonoBehaviour {
 
 	public Button start;
+    public Button credits;
 
 	// Use this for initialization
 	void Start () {
 		start.onClick.AddListener (delegate {
 			SceneManager.LoadScene("SelectLevel");
 		});
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        credits.onClick.AddListener(delegate {
+            SceneManager.LoadScene("Credits");
+        });
+    }	
 }

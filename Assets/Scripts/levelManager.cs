@@ -24,6 +24,8 @@ public class levelManager : MonoBehaviour {
 
 	public Button[] selectPlant;
 
+    public Button returnToInicial;
+
 	public GameObject plant;
 	// Use this for initialization
 	void Start () {
@@ -58,6 +60,11 @@ public class levelManager : MonoBehaviour {
 				changePlant (nums);
 			});
 		}
+
+        returnToInicial.onClick.AddListener(delegate
+        {
+            SceneManager.LoadScene("Inicial");
+        });
 
 		changeSprite ();
         changePlant(0);

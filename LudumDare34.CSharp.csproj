@@ -65,6 +65,7 @@
     <Compile Include="Assets\3D Particles\Scripts\SmoothCameraOrbit.cs" />
     <Compile Include="Assets\Scripts\AppleScript.cs" />
     <Compile Include="Assets\Scripts\BackgroundController.cs" />
+    <Compile Include="Assets\Scripts\CreditsManager.cs" />
     <Compile Include="Assets\Scripts\EndGame.cs" />
     <Compile Include="Assets\Scripts\EndLine.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
