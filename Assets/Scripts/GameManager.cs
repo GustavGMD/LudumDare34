@@ -77,16 +77,21 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		/*
+
 		for(int i = 0; i < Input.touchCount; i++)
 		{
+			
 			Touch myTouch = Input.GetTouch(i);
-			//Do something with the touches
-			if (myTouch.position.x <= Screen.width / 2) {
-				Destroy (filaRitmo[0]);
+			int ind = 1;
+			if (myTouch.position.x <= Screen.width / 2) { //Lado Esquerdo
+				ind = 0;
+			}
+			if (filaRitmos[ind].Count > 0) {
+				GameObject ok = filaRitmos[ind].Dequeue ();
+				UpdateScore (ok, area[ind]);
 			}
 		}
-		*/
+
 		if (Input.GetMouseButtonDown(0)) {
 			int ind = 1;
 			if (Input.mousePosition.x <= Screen.width / 2) { //Lado Esquerdo
