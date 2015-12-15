@@ -161,6 +161,10 @@ Prefab:
       propertyPath: ritmoThreshold
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: deltaThreshold
+      value: 0.15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 127680}

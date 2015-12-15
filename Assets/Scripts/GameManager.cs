@@ -44,6 +44,9 @@ public class GameManager : MonoBehaviour {
 
     public int energia = 50;
 
+    public float continuoMaxDistance = 1f;
+    private GameObject _currentContinuo;
+
 	// Use this for initialization
 	void Start () {
         //inicializa o level
@@ -70,8 +73,36 @@ public class GameManager : MonoBehaviour {
 	void GameObjectSpawn(){
 		
 		int res = UnityEngine.Random.Range (0, 2);
-		GameObject obj =(GameObject) Instantiate (ritmoModel, spawnPosition[res], Quaternion.identity);
-		filaRitmos [res].Enqueue (obj);
+        if(filaRitmos[res].Count > 0) { 
+            GameObject temp = filaRitmos[res].Peek();
+            Vector3 positionToCompare;
+            if(temp.GetComponent<RitmoMovement>().continuo)
+            {
+                positionToCompare = temp.GetComponent<RitmoMovement>().lineEnd;
+            }
+            else
+            {
+                positionToCompare = temp.transform.position;
+            } 
+
+            if(Mathf.Abs(spawnPosition[res].y - positionToCompare.y) < continuoMaxDistance)
+            {
+                temp.GetComponent<RitmoMovement>().SetContinuo(true, spawnPosition[res]);
+                Debug.Log("fez um continuo");
+            }
+            else
+            {
+                GameObject obj = (GameObject)Instantiate(ritmoModel, spawnPosition[res], Quaternion.identity);
+                filaRitmos[res].Enqueue(obj);
+            }
+        }
+        else
+        {
+            GameObject obj = (GameObject)Instantiate(ritmoModel, spawnPosition[res], Quaternion.identity);
+            filaRitmos[res].Enqueue(obj);
+        }
+
+		
 	}
 	
 	// Update is called once per frame
@@ -98,15 +129,31 @@ public class GameManager : MonoBehaviour {
 				ind = 0;
 			}
 			if (filaRitmos[ind].Count > 0) {
-				GameObject ok = filaRitmos[ind].Dequeue ();
-				UpdateScore (ok, area[ind]);
+                if (!filaRitmos[ind].Peek().GetComponent<RitmoMovement>().continuo)
+                {
+                    GameObject ok = filaRitmos[ind].Dequeue();
+                    UpdateScore(ok, area[ind]);
+                }
+                else
+                {
+                    GameObject ok = filaRitmos[ind].Peek();
+                    UpdateScore(ok, area[ind]);
+                }
 			}
 		}
-		//Button Pause?
 
-		//confere se a música já terminou de tocar
-        //tem que conferir tanto no preprocessor quanto no reprodutor da música
-        if(!gameSong.isPlaying && !soundProcessor.GetComponent<AudioSource>().isPlaying)
+        if (Input.GetMouseButtonUp(0))
+        {
+            if(_currentContinuo != null)
+            {
+
+            }
+        }
+            //Button Pause?
+
+            //confere se a música já terminou de tocar
+            //tem que conferir tanto no preprocessor quanto no reprodutor da música
+            if (!gameSong.isPlaying && !soundProcessor.GetComponent<AudioSource>().isPlaying)
         {
             // chama funçãod e fim de jogo
             if (comboMax < comboCount) comboMax = comboCount;
@@ -124,6 +171,12 @@ public class GameManager : MonoBehaviour {
 			comboCount++;
 			countPerfeito++;
             SpawnParticula(0, obj.transform.position);
+            if (!obj.GetComponent<RitmoMovement>().continuo)
+                Destroy(obj);
+            else
+            {
+                _currentContinuo = obj;
+            }
         } else if (Mathf.Abs (area.transform.position.y - obj.transform.position.y) < bom) {
 			score += scoreBom;
             energia += scoreBom;
@@ -132,6 +185,12 @@ public class GameManager : MonoBehaviour {
             comboCount++;
 			countBom++;
             SpawnParticula(1, obj.transform.position);
+            if (!obj.GetComponent<RitmoMovement>().continuo)
+                Destroy(obj);
+            else
+            {
+                _currentContinuo = obj;
+            }
         } else {
             energia -= scoreBom;
             plantController.UpdateEnergia(energia);
@@ -145,9 +204,88 @@ public class GameManager : MonoBehaviour {
             comboCount = 0;
 			countErros++;
             //Fail
-            SpawnParticula(2, obj.transform.position);
+            SpawnParticula(2, area.transform.position);
         }
 
+        //Destroy(obj);
+    }
+
+    /**
+    void StartScoreContinuo(GameObject obj, GameObject area, float time)
+    {
+        if (Mathf.Abs(area.transform.position.y - obj.transform.position.y) < perfeito)
+        {
+            score += scorePerfeito;
+            energia += scorePerfeito;
+            if (energia > 100) energia = 100;
+            plantController.UpdateEnergia(energia);
+            comboCount++;
+            countPerfeito++;
+            SpawnParticula(0, obj.transform.position);
+        }
+        else if (Mathf.Abs(area.transform.position.y - obj.transform.position.y) < bom)
+        {
+            score += scoreBom;
+            energia += scoreBom;
+            if (energia > 100) energia = 100;
+            plantController.UpdateEnergia(energia);
+            comboCount++;
+            countBom++;
+            SpawnParticula(1, obj.transform.position);
+        }
+        else
+        {
+            energia -= scoreBom;
+            plantController.UpdateEnergia(energia);
+            if (energia <= 0)
+            {
+                //chama função de derrota
+                EndGame(false);
+            }
+
+            if (comboMax < comboCount) comboMax = comboCount;
+            comboCount = 0;
+            countErros++;
+            //Fail
+            SpawnParticula(2, area.transform.position);
+        }
+    }
+    /**/
+
+    void FinishScoreContinuo(GameObject obj, GameObject area, float time)
+    {
+        if (Mathf.Abs(area.transform.position.y - obj.GetComponent<RitmoMovement>().lineEnd.y) < perfeito)
+        {
+            score += scorePerfeito;
+            energia += scorePerfeito;
+            if (energia > 100) energia = 100;
+            plantController.UpdateEnergia(energia);
+            comboCount++;
+            countPerfeito++;
+            SpawnParticula(0, obj.transform.position);
+        }
+        else if (Mathf.Abs(area.transform.position.y - obj.GetComponent<RitmoMovement>().lineEnd.y) < bom)
+        {
+            score += scoreBom;
+            energia += scoreBom;
+            if (energia > 100) energia = 100;
+            plantController.UpdateEnergia(energia);
+            comboCount++;
+            countBom++;
+            SpawnParticula(1, obj.transform.position);
+        }
+        else
+        {
+            energia -= scoreBom;
+            plantController.UpdateEnergia(energia);
+            if (energia <= 0)
+            {
+                //chama função de derrota
+                EndGame(false);
+            }
+            SpawnParticula(2, obj.transform.position);
+        }
+        //adiciona score
         Destroy(obj);
     }
 
