@@ -63,7 +63,6 @@ GameObject:
   - 114: {fileID: 11474528}
   - 58: {fileID: 5850352}
   - 50: {fileID: 5068694}
-  - 120: {fileID: 12032264}
   m_Layer: 8
   m_Name: Ritmo
   m_TagString: Untagged
@@ -176,48 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   continuo: 0
-  lineRenderer: {fileID: 12032264}
-  lineEnd: {x: 0, y: 0, z: 0}
   step: 2
---- !u!120 &12032264
-LineRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 174416}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
-  m_Parameters:
-    startWidth: 0.2
-    endWidth: 0.2
-    m_StartColor:
-      serializedVersion: 2
-      rgba: 4294967295
-    m_EndColor:
-      serializedVersion: 2
-      rgba: 4294967295
-  m_UseWorldSpace: 0
 --- !u!198 &19809752
 ParticleSystem:
   m_ObjectHideFlags: 1

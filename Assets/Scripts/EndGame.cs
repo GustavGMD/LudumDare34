@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+//using UnityEngine.SceneManagement;
 
 public class EndGame : MonoBehaviour {
 
@@ -47,7 +47,7 @@ public class EndGame : MonoBehaviour {
 		labels[4].text = hits.ToString("##")+"%";
 
 		back.onClick.AddListener (delegate {
-			SceneManager.LoadScene ("SelectLevel");
+            Application.LoadLevel("SelectLevel");
 		});
 	}
 	

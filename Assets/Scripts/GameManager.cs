@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
+//using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -44,8 +44,8 @@ public class GameManager : MonoBehaviour {
 
     public int energia = 50;
 
-    public float continuoMaxDistance = 1f;
-    private GameObject _currentContinuo;
+    //public float continuoMaxDistance = 1f;
+    //private GameObject _currentContinuo;
 
 	// Use this for initialization
 	void Start () {
@@ -72,46 +72,16 @@ public class GameManager : MonoBehaviour {
 
 	void GameObjectSpawn(){
 		
-		int res = UnityEngine.Random.Range (0, 2);
-        if(filaRitmos[res].Count > 0) { 
-            GameObject temp = filaRitmos[res].Peek();
-            Vector3 positionToCompare;
-            if(temp.GetComponent<RitmoMovement>().continuo)
-            {
-                positionToCompare = temp.GetComponent<RitmoMovement>().lineEnd;
-            }
-            else
-            {
-                positionToCompare = temp.transform.position;
-            } 
-
-            if(Mathf.Abs(spawnPosition[res].y - positionToCompare.y) < continuoMaxDistance)
-            {
-                temp.GetComponent<RitmoMovement>().SetContinuo(true, spawnPosition[res]);
-                Debug.Log("fez um continuo");
-            }
-            else
-            {
-                GameObject obj = (GameObject)Instantiate(ritmoModel, spawnPosition[res], Quaternion.identity);
-                filaRitmos[res].Enqueue(obj);
-            }
-        }
-        else
-        {
-            GameObject obj = (GameObject)Instantiate(ritmoModel, spawnPosition[res], Quaternion.identity);
-            filaRitmos[res].Enqueue(obj);
-        }
-
-		
+		int res = UnityEngine.Random.Range (0, 2);        
+        GameObject obj = (GameObject)Instantiate(ritmoModel, spawnPosition[res], Quaternion.identity);
+        filaRitmos[res].Enqueue(obj);		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-
+        /**
 		for(int i = 0; i < Input.touchCount; i++)
-		{
-			
+		{			
 			Touch myTouch = Input.GetTouch(i);
 			int ind = 1;
 			if (myTouch.position.x <= Screen.width / 2) { //Lado Esquerdo
@@ -122,44 +92,28 @@ public class GameManager : MonoBehaviour {
 				UpdateScore (ok, area[ind]);
 			}
 		}
-
-		if (Input.GetMouseButtonDown(0)) {
-			int ind = 1;
-			if (Input.mousePosition.x <= Screen.width / 2) { //Lado Esquerdo
-				ind = 0;
-			}
-			if (filaRitmos[ind].Count > 0) {
-                if (!filaRitmos[ind].Peek().GetComponent<RitmoMovement>().continuo)
-                {
-                    GameObject ok = filaRitmos[ind].Dequeue();
-                    UpdateScore(ok, area[ind]);
-                }
-                else
-                {
-                    GameObject ok = filaRitmos[ind].Peek();
-                    UpdateScore(ok, area[ind]);
-                }
-			}
-		}
-
-        if (Input.GetMouseButtonUp(0))
+        /**/
+        if (Input.GetMouseButtonDown(0))
         {
-            if(_currentContinuo != null)
-            {
-
+            int ind = 1;
+            if (Input.mousePosition.x <= Screen.width / 2)
+            { //Lado Esquerdo
+                ind = 0;
+            }
+            if (filaRitmos[ind].Count > 0)
+            {                
+                GameObject ok = filaRitmos[ind].Dequeue();
+                UpdateScore(ok, area[ind]);                
             }
         }
-            //Button Pause?
+        /**/
 
-            //confere se a música já terminou de tocar
-            //tem que conferir tanto no preprocessor quanto no reprodutor da música
-            if (!gameSong.isPlaying && !soundProcessor.GetComponent<AudioSource>().isPlaying)
+        if(!gameSong.isPlaying && !soundProcessor.GetComponent<AudioSource>().isPlaying)
         {
-            // chama funçãod e fim de jogo
-            if (comboMax < comboCount) comboMax = comboCount;
             EndGame(true);
         }
-	}
+
+    }
 
 	void UpdateScore(GameObject obj, GameObject area){
         		
@@ -171,12 +125,7 @@ public class GameManager : MonoBehaviour {
 			comboCount++;
 			countPerfeito++;
             SpawnParticula(0, obj.transform.position);
-            if (!obj.GetComponent<RitmoMovement>().continuo)
-                Destroy(obj);
-            else
-            {
-                _currentContinuo = obj;
-            }
+            //Destroy(obj);
         } else if (Mathf.Abs (area.transform.position.y - obj.transform.position.y) < bom) {
 			score += scoreBom;
             energia += scoreBom;
@@ -185,12 +134,7 @@ public class GameManager : MonoBehaviour {
             comboCount++;
 			countBom++;
             SpawnParticula(1, obj.transform.position);
-            if (!obj.GetComponent<RitmoMovement>().continuo)
-                Destroy(obj);
-            else
-            {
-                _currentContinuo = obj;
-            }
+            //Destroy(obj);
         } else {
             energia -= scoreBom;
             plantController.UpdateEnergia(energia);
@@ -207,7 +151,7 @@ public class GameManager : MonoBehaviour {
             SpawnParticula(2, area.transform.position);
         }
 
-        //Destroy(obj);
+        Destroy(obj);
     }
 
     /**
@@ -250,7 +194,7 @@ public class GameManager : MonoBehaviour {
             SpawnParticula(2, area.transform.position);
         }
     }
-    /**/
+    /**
 
     void FinishScoreContinuo(GameObject obj, GameObject area, float time)
     {
@@ -288,6 +232,7 @@ public class GameManager : MonoBehaviour {
         //adiciona score
         Destroy(obj);
     }
+    /**/
 
     void StartSong()
     {
@@ -355,7 +300,7 @@ public class GameManager : MonoBehaviour {
         GlobalVars.Instance.comboMax = comboMax;
         GlobalVars.Instance.rank = scoreString;
         GlobalVars.Instance.win = win;
-        SceneManager.LoadScene("EndGame");
+        Application.LoadLevel("EndGame");
     }
 
     public void SpawnParticula(int index, Vector3 position)

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+//using UnityEngine.SceneManagement;
 
 public class levelManager : MonoBehaviour {
 
@@ -63,7 +63,7 @@ public class levelManager : MonoBehaviour {
 
         returnToInicial.onClick.AddListener(delegate
         {
-            SceneManager.LoadScene("Inicial");
+            Application.LoadLevel("Inicial");
         });
 
 		changeSprite ();
@@ -116,7 +116,7 @@ public class levelManager : MonoBehaviour {
 		GlobalVars vars = GlobalVars.Instance;
 		vars.levelAtual = level;
 		vars.plantSelected = plantSelected;
-		SceneManager.LoadScene ("GameScene");
+        Application.LoadLevel("GameScene");
 	}
 
 

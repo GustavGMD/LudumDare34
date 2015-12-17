@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+//using UnityEngine.SceneManagement;
 
 public class IncialScene : MonoBehaviour {
 
@@ -11,10 +11,10 @@ public class IncialScene : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		start.onClick.AddListener (delegate {
-			SceneManager.LoadScene("SelectLevel");
+			Application.LoadLevel("SelectLevel");
 		});
         credits.onClick.AddListener(delegate {
-            SceneManager.LoadScene("Credits");
+            Application.LoadLevel("Credits");
         });
     }	
 }
